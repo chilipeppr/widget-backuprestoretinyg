@@ -481,20 +481,15 @@ cpdefine("inline:com-chilipeppr-widget-backuprestoretinyg", ["chilipeppr_ready"]
                         foundVal = true;
                         console.log("confLine[j]=", confLine[j], "isNaN():", isNaN(confLine[j]), "foundVal:", foundVal);
                         console.log("found parameter at j=", j, "in line i=", i);
-                        //python        confName = re.search(r'\[(.*)\]', confLine[0]).group(1)
                         confName = (confLine[0].match(/\x5B(.*)\x5D/)).slice(1); //extract characters between [] in first element of array confLine
                         console.log("confName=", confName);
-                        //python        if confName not in command_filter:
                         if (command_filter.indexOf(confName[0]) == -1) { //-1 means not on filter list ; Must use confName[0]
-                            //python            confCmd = '$' + confName + '=' + confVal.strip() + '\n'
                             confCmd = [(confName[0]), (confLine[j].trim())];
-                            //python            print "Sent: " + confCmd.strip()
                             cmdDownList[countCmd] = confCmd;
                             console.log("confCmd added to Send queue:", cmdDownList[countCmd]);
                             countCmd += 1;
                         } else {
                             console.log("command_filter.indexOf(confName)=", command_filter.indexOf(confName));
-                            //python        print "Filtered: " + confName
                             console.log("Filtered:", confName);
                             countFlt += 1;
                         }

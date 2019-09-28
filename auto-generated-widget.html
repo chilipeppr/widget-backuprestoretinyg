@@ -198,7 +198,7 @@ cpdefine("inline:com-chilipeppr-widget-backuprestoretinyg", ["chilipeppr_ready"]
         url: "https://raw.githubusercontent.com/chilipeppr/widget-backuprestoretinyg/master/auto-generated-widget.html",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
         fiddleurl: "(Local dev. No edit URL)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "https://github.com/chilipeppr/widget-backuprestoretinyg", // The backing github repo
-        testurl: "http://localhost:9000/widget.html",   // The standalone working widget so can view it working by itself
+        testurl: "http://localhost:9003/widget.html",   // The standalone working widget so can view it working by itself
         name: "Widget / Backup and Restore TinyG",
         desc: "This widget does backup and restore of TinyG Configurations to/from PC file",
         publish: {},
@@ -572,188 +572,15 @@ cpdefine("inline:com-chilipeppr-widget-backuprestoretinyg", ["chilipeppr_ready"]
                         foundVal = true;
                         console.log("confLine[j]=", confLine[j], "isNaN():", isNaN(confLine[j]), "foundVal:", foundVal);
                         console.log("found parameter at j=", j, "in line i=", i);
-                        //python        confName = re.search(r'\[(.*)\]', confLine[0]).group(1)
                         confName = (confLine[0].match(/\x5B(.*)\x5D/)).slice(1); //extract characters between [] in first element of array confLine
                         console.log("confName=", confName);
-                        //python        if confName not in command_filter:
                         if (command_filter.indexOf(confName[0]) == -1) { //-1 means not on filter list ; Must use confName[0]
-                            //python            confCmd = '
-
-</head>
-
-<body>
-    
-    <div id="com-chilipeppr-widget-backuprestoretinyg" class="modal fade">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="btn-toolbar pull-right" role="toolbar">
-                        <div class="btn-group">
-                            <div class="dropdown">
-                                <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
-    
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
-                            </div>
-                        </div>
-                    </div>	<span class="modal-title" data-toggle="popover">Archive and Restore from Archive for TinyG v0.51 <br> <mark>(this widget is under development)</mark> </span>  <span style="font-size:9px;" class="fb-build"></span>
-    
-                </div>
-                <div class="modal-body">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="active"><a href="#backuprestoretinyg-Backup" role="tab" data-toggle="tab">Archive to File</a>
-    
-                        </li>
-                        <li><a href="#backuprestoretinyg-Restore" role="tab" data-toggle="tab">Restore from Archive File</a>
-    
-                        </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="backuprestoretinyg-Backup">
-                            <div class="panel-body">
-                                <table>
-                                    <tr>
-                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Archive-to-File Display and Edit Window:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                            <textarea id="inputTextToSaveBackup" style="width:650px;height:300px"></textarea>
-                                        </td>
-                                    </tr>
-                                    <tr class="blank_row">
-                                        <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td>STEP 1.Click to Upload Configuration from tinyG:</td>
-                                        <td>
-                                            <button type="button" class="btn btn-xs btn-default uploadTinyGconfigs" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Load Params from tinyG" data-content="Read Params from tinyG"><span class="">Upload from tinyG</span>
-    
-                                            </button>
-                                        </td>
-                                        <tr class="blank_row">
-                                            <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
-                                        </tr>
-                                    </tr>
-                                    <tr>
-                                        <td>STEP 2: Archive Filename to Save As:</td>
-                                        <td>
-                                            <input id="inputFileNameToSaveAs" size="45"></input>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>&nbsp &nbsp &nbsp
-                                            <mark>default file name is editable</mark>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>....(optional Step 2.5) Add // Comment rows to file</td>
-                                    </tr>
-                                    <tr class="blank_row">
-                                        <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td>STEP 3: Click to Download to Browser Downloads</td>
-                                        <td>
-                                            <button type="button" class="btn btn-xs btn-default saveTextAsFile" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Download Selected File" data-content="Download the Backup file"><span class="">Download Archive file</span>
-    
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="backuprestoretinyg-Restore">
-                            <div class="panel-body">
-                                <table>
-                                    <tr>
-                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Restore-from-Archive-File Display and Edit Window:</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                            <textarea id="inputTextToSaveRestore" style="width:650px;height:300px"></textarea>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Step 1: Select an Archive File with Restore Parameters:</td>
-                                        <td>
-                                            <input type="file" id="fileToLoad" size="50">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                                            <mark>uses Operating System File Chooser</mark>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Step 2: Click to load Restore file to window</td>
-                                        <td>
-                                            <button type="button" class="btn btn-xs btn-default loadFileAsText" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Load Selected File" data-content="Input the Restore file"><span class="">Load File to Text Window</span>
-    
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>.....(optional Step 2.5) Make edits to Restore file</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Step 3 : Click to Download Configuration to tinyG:</td>
-                                        <td>
-                                            <button type="button" class="btn btn-xs btn-default downloadTinyGconfigs" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Load Config Param to tinyG" data-content="Input the Restore file"><span class="">Download-to-tinyG</span>
-    
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp See results above</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Diagnostic: Download Results to Browser Downloads</td>
-                                        <td>
-                                            <button type="button" class="btn btn-xs btn-default saveTextAsFile_Restore" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Download Selected File" data-content="Download the Results file"><span class="">Download Restore Results</span>
-    
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <!-- <tr>
-                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                                            <mark>Verify and Timing not implemented yet</mark>
-                                        </td>
-                                        <td></td>
-                                    </tr>  -->
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="btn-group">
-                        <div class="col col-xs-6">
-                            <button type="button" class="btn btn-xs btn-default tinyg-closeConfig" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Close (without applying changes)" data-content="Close the dialog"><span class="">Close</span>
-    
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-</body>
-
-</html>
- + confName + '=' + confVal.strip() + '\n'
                             confCmd = [(confName[0]), (confLine[j].trim())];
-                            //python            print "Sent: " + confCmd.strip()
                             cmdDownList[countCmd] = confCmd;
                             console.log("confCmd added to Send queue:", cmdDownList[countCmd]);
                             countCmd += 1;
                         } else {
                             console.log("command_filter.indexOf(confName)=", command_filter.indexOf(confName));
-                            //python        print "Filtered: " + confName
                             console.log("Filtered:", confName);
                             countFlt += 1;
                         }
