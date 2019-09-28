@@ -32,62 +32,166 @@
 </head>
 
 <body>
-    <div id="com-chilipeppr-widget-template" class="panel panel-default">
-        <div class="panel-heading ">
-
-            <div class="btn-toolbar pull-right" role="toolbar">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-xs btn-default btn-sayhello" data-delay="1000" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Say Hello" data-content="Generate a hello message">Say Hello
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-xs btn-default hidebody"><span class="glyphicon glyphicon-chevron-up"></span>
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
-                    </div>
-                </div>
-            </div> <span class="panel-title" data-toggle="popover">Template Widget</span> <span style="font-size:9px;" class="fb-build">v1</span>
-
-        </div>
-        <div class="panel-body">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#com-chilipeppr-widget-template-tab1" role="tab" data-toggle="tab">Tab 1</a>
-                </li>
-                <li><a href="#com-chilipeppr-widget-template-tab2" role="tab" data-toggle="tab">Tab 2</a></li>
-                <li><a href="#com-chilipeppr-widget-template-tab3" role="tab" data-toggle="tab">Tab 3</a></li>
-            </ul>
-            <!-- Tab panes -->
-
-            <div class="tab-content">
     
-                <!-- Tab 1 -->
-                <div class="tab-pane active" id="com-chilipeppr-widget-template-tab1">
-                    <p>This is the content of tab 1.</p>
-                    <div class="">
-                        <button type="button" class="btn btn-xs btn-default btn-helloworld2" style="margin: 4px 0;">Hello World 2</button>
+    <div id="com-chilipeppr-widget-backuprestoretinyg" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="btn-toolbar pull-right" role="toolbar">
+                        <div class="btn-group">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+    
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                            </div>
+                        </div>
+                    </div>	<span class="modal-title" data-toggle="popover">Archive and Restore from Archive for TinyG v0.51 <br> <mark>(this widget is under development)</mark> </span>  <span style="font-size:9px;" class="fb-build"></span>
+    
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active"><a href="#backuprestoretinyg-Backup" role="tab" data-toggle="tab">Archive to File</a>
+    
+                        </li>
+                        <li><a href="#backuprestoretinyg-Restore" role="tab" data-toggle="tab">Restore from Archive File</a>
+    
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="backuprestoretinyg-Backup">
+                            <div class="panel-body">
+                                <table>
+                                    <tr>
+                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Archive-to-File Display and Edit Window:</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <textarea id="inputTextToSaveBackup" style="width:650px;height:300px"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr class="blank_row">
+                                        <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>STEP 1.Click to Upload Configuration from tinyG:</td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default uploadTinyGconfigs" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Load Params from tinyG" data-content="Read Params from tinyG"><span class="">Upload from tinyG</span>
+    
+                                            </button>
+                                        </td>
+                                        <tr class="blank_row">
+                                            <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+                                        </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>STEP 2: Archive Filename to Save As:</td>
+                                        <td>
+                                            <input id="inputFileNameToSaveAs" size="45"></input>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>&nbsp &nbsp &nbsp
+                                            <mark>default file name is editable</mark>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>....(optional Step 2.5) Add // Comment rows to file</td>
+                                    </tr>
+                                    <tr class="blank_row">
+                                        <td bgcolor="#FFFFFF" colspan="3">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>STEP 3: Click to Download to Browser Downloads</td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default saveTextAsFile" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Download Selected File" data-content="Download the Backup file"><span class="">Download Archive file</span>
+    
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="backuprestoretinyg-Restore">
+                            <div class="panel-body">
+                                <table>
+                                    <tr>
+                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Restore-from-Archive-File Display and Edit Window:</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <textarea id="inputTextToSaveRestore" style="width:650px;height:300px"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Step 1: Select an Archive File with Restore Parameters:</td>
+                                        <td>
+                                            <input type="file" id="fileToLoad" size="50">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                                            <mark>uses Operating System File Chooser</mark>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Step 2: Click to load Restore file to window</td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default loadFileAsText" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Load Selected File" data-content="Input the Restore file"><span class="">Load File to Text Window</span>
+    
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>.....(optional Step 2.5) Make edits to Restore file</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Step 3 : Click to Download Configuration to tinyG:</td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default downloadTinyGconfigs" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Load Config Param to tinyG" data-content="Input the Restore file"><span class="">Download-to-tinyG</span>
+    
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp See results above</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diagnostic: Download Results to Browser Downloads</td>
+                                        <td>
+                                            <button type="button" class="btn btn-xs btn-default saveTextAsFile_Restore" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Download Selected File" data-content="Download the Results file"><span class="">Download Restore Results</span>
+    
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                                            <mark>Verify and Timing not implemented yet</mark>
+                                        </td>
+                                        <td></td>
+                                    </tr>  -->
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Tab 2 -->
-                <div class="tab-pane" id="com-chilipeppr-widget-template-tab2">
-                    <p>This is the content of tab 2.</p>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <div class="col col-xs-6">
+                            <button type="button" class="btn btn-xs btn-default tinyg-closeConfig" data-delay="500" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Close (without applying changes)" data-content="Close the dialog"><span class="">Close</span>
+    
+                            </button>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Tab 3 -->
-                <div class="tab-pane" id="com-chilipeppr-widget-template-tab3">
-                    <p>This is the content of tab 3.</p>
-                </div>
-
             </div>
-
         </div>
-    </div>
+        
 </body>
 
 </html>

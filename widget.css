@@ -1,10 +1,71 @@
 /* CSS for ChiliPeppr Widget */
 
-#com-chilipeppr-widget-template {
-   
-}
-
-#com-chilipeppr-widget-template .nav-tabs>li>a {
+#com-chilipeppr-widget-backuprestoretinyg .nav-tabs>li>a {
     padding: 2px 6px;
 }
-
+#com-chilipeppr-widget-backuprestoretinyg .tab-pane {
+    padding:10px 16px 20px 16px;
+    overflow:auto;
+}
+#com-chilipeppr-widget-backuprestoretinyg .panel-body {
+    padding:3px;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat div.input-label {
+    line-height:13px;
+    padding-top:6px;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .input-val {
+    padding:0;
+    padding-left: 10px;
+    height:28px;
+    margin-bottom:2px;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .col {
+    padding:0 10px 0 0;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .col:last-child {
+    padding:0;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .progress {
+    margin-bottom:0;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .stat-row {
+    padding-top:2px;
+}
+#com-chilipeppr-widget-backuprestoretinyg .com-chilipeppr-widget-backuprestoretinyg-stat div.col.lblpad {
+    padding-left:10px;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .stat-unit {
+    font-size:9px;
+    /* display:none; */
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat div.col.well {
+    margin-bottom:0px;
+    padding-left:5px;
+}
+.com-chilipeppr-widget-backuprestoretinyg-stat .stat-sm {
+    font-size:10px;
+}
+#com-chilipeppr-widget-backuprestoretinyg .panel-footer {
+    font-size:11px;
+    padding:0;
+    margin:0;
+}
+#com-chilipeppr-widget-backuprestoretinyg-status {
+    //overflow: auto;
+    //max-height:30px;
+    background:none;
+    background-color:#f5f5f5;
+    border:none;
+}
+#com-chilipeppr-widget-backuprestoretinyg .col-xs-3 {
+    padding:0;
+    margin:0;
+}
+#com-chilipeppr-widget-backuprestoretinyg .progress-bar span {
+    color: black;
+    padding-left:4px;
+}
+#com-chilipeppr-widget-backuprestoretinyg .stat-val {
+    padding-left:4px;
+}

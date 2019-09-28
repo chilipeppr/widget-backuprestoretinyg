@@ -1,9 +1,9 @@
-# com-chilipeppr-widget-template
-This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github.
+# com-chilipeppr-widget-backuprestoretinyg
+This widget does backup and restore of TinyG Configurations to/from PC file
 
 ![alt text](screenshot.png "Screenshot")
 
-## ChiliPeppr Widget / Template
+## ChiliPeppr Widget / Backup and Restore TinyG
 
 All ChiliPeppr widgets/elements are defined using cpdefine() which is a method
 that mimics require.js. Each defined object must have a unique ID so it does
@@ -11,12 +11,12 @@ not conflict with other ChiliPeppr widgets.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-chilipeppr-widget-template |
-| Name                  | Widget / Template |
-| Description           | This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github. |
-| chilipeppr.load() URL | https://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html |
+| ID                    | com-chilipeppr-widget-backuprestoretinyg |
+| Name                  | Widget / Backup and Restore TinyG |
+| Description           | This widget does backup and restore of TinyG Configurations to/from PC file |
+| chilipeppr.load() URL | https://raw.githubusercontent.com/chilipeppr/widget-backuprestoretinyg/master/auto-generated-widget.html |
 | Edit URL              | (Local dev. No edit URL) |
-| Github URL            | https://github.com/chilipeppr/widget-template |
+| Github URL            | https://github.com/chilipeppr/widget-backuprestoretinyg |
 | Test URL              | http://localhost:9000/widget.html |
 
 ## Example Code for chilipeppr.load() Statement
@@ -29,20 +29,20 @@ back the instance of it.
 
 ```javascript
 // Inject new div to contain widget or use an existing div with an ID
-$("body").append('<' + 'div id="myDivWidgetTemplate"><' + '/div>');
+$("body").append('<' + 'div id="myDivWidgetBackuprestoretinyg"><' + '/div>');
 
 chilipeppr.load(
-  "#myDivWidgetTemplate",
-  "https://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html",
+  "#myDivWidgetBackuprestoretinyg",
+  "https://raw.githubusercontent.com/chilipeppr/widget-backuprestoretinyg/master/auto-generated-widget.html",
   function() {
-    // Callback after widget loaded into #myDivWidgetTemplate
+    // Callback after widget loaded into #myDivWidgetBackuprestoretinyg
     // Now use require.js to get reference to instantiated widget
     cprequire(
-      ["inline:com-chilipeppr-widget-template"], // the id you gave your widget
-      function(myObjWidgetTemplate) {
+      ["inline:com-chilipeppr-widget-backuprestoretinyg"], // the id you gave your widget
+      function(myObjWidgetBackuprestoretinyg) {
         // Callback that is passed reference to the newly loaded widget
-        console.log("Widget / Template just got loaded.", myObjWidgetTemplate);
-        myObjWidgetTemplate.init();
+        console.log("Widget / Backup and Restore TinyG just got loaded.", myObjWidgetBackuprestoretinyg);
+        myObjWidgetBackuprestoretinyg.init();
       }
     );
   }
@@ -64,7 +64,7 @@ To better understand how ChiliPeppr's subscribe() method works see amplify.js's 
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>/com-chilipeppr-widget-template/onExampleGenerate</td><td>Example: Publish this signal when we go to generate gcode.</td></tr>    
+      <tr><td colspan="2">(No signals defined in this widget/element)</td></tr>    
       </tbody>
   </table>
 
@@ -98,7 +98,7 @@ To better understand how ChiliPeppr's subscribe() method works see amplify.js's 
           </tr>
       </thead>
       <tbody>
-      <tr><td colspan="2">(No signals defined in this widget/element)</td></tr>    
+      <tr valign="top"><td>/com-chilipeppr-widget-backuprestoretinyg/com-chilipeppr-widget-serialport/send</td><td>Update this for backuprestoretinyg</td></tr>    
       </tbody>
   </table>
 
@@ -115,7 +115,7 @@ To better understand how ChiliPeppr's publish() method works see amplify.js's do
           </tr>
       </thead>
       <tbody>
-      <tr><td colspan="2">(No signals defined in this widget/element)</td></tr>    
+      <tr valign="top"><td>/com-chilipeppr-widget-backuprestoretinyg/com-chilipeppr-widget-serialport/recvline</td><td>Update this for backuprestoretinyg</td></tr>    
       </tbody>
   </table>
 
@@ -132,39 +132,7 @@ The table below shows, in order, the methods and properties inside the widget/el
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-widget-template"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Widget / Template"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"https://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"(Local dev. No edit URL)"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"https://github.com/chilipeppr/widget-template"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://localhost:9000/widget.html"</td></tr><tr valign="top"><td>publish</td><td>object</td><td>Please see docs above.<br><br>Define the publish signals that this widget/element owns or defines so that
-other widgets know how to subscribe to them and what they do.</td></tr><tr valign="top"><td>subscribe</td><td>object</td><td>Please see docs above.<br><br>Define the subscribe signals that this widget/element owns or defines so that
-other widgets know how to subscribe to them and what they do.</td></tr><tr valign="top"><td>foreignPublish</td><td>object</td><td>Please see docs above.<br><br>Document the foreign publish signals, i.e. signals owned by other widgets
-or elements, that this widget/element publishes to.</td></tr><tr valign="top"><td>foreignSubscribe</td><td>object</td><td>Please see docs above.<br><br>Document the foreign subscribe signals, i.e. signals owned by other widgets
-or elements, that this widget/element subscribes to.</td></tr><tr valign="top"><td>init</td><td>function</td><td>function() <br><br>All widgets should have an init method. It should be run by the
-instantiating code like a workspace or a different widget.</td></tr><tr valign="top"><td>btnSetup</td><td>function</td><td>function() <br><br>Call this method from init to setup all the buttons when this widget
-is first loaded. This basically attaches click events to your 
-buttons. It also turns on all the bootstrap popovers by scanning
-the entire DOM of the widget.</td></tr><tr valign="top"><td>onHelloBtnClick</td><td>function</td><td>function(evt) <br><br>onHelloBtnClick is an example of a button click event callback</td></tr><tr valign="top"><td>options</td><td>object</td><td>User options are available in this property for reference by your
-methods. If any change is made on these options, please call
-saveOptionsLocalStorage()</td></tr><tr valign="top"><td>setupUiFromLocalStorage</td><td>function</td><td>function() <br><br>Call this method on init to setup the UI by reading the user's
-stored settings from localStorage and then adjust the UI to reflect
-what the user wants.</td></tr><tr valign="top"><td>saveOptionsLocalStorage</td><td>function</td><td>function() <br><br>When a user changes a value that is stored as an option setting, you
-should call this method immediately so that on next load the value
-is correctly set.</td></tr><tr valign="top"><td>showBody</td><td>function</td><td>function(evt) <br><br>Show the body of the panel.
-<br><br><b>evt</b> ({jquery_event})  - If you pass the event parameter in, we 
-know it was clicked by the user and thus we store it for the next 
-load so we can reset the user's preference. If you don't pass this 
-value in we don't store the preference because it was likely code 
-that sent in the param.</td></tr><tr valign="top"><td>hideBody</td><td>function</td><td>function(evt) <br><br>Hide the body of the panel.
-<br><br><b>evt</b> ({jquery_event})  - If you pass the event parameter in, we 
-know it was clicked by the user and thus we store it for the next 
-load so we can reset the user's preference. If you don't pass this 
-value in we don't store the preference because it was likely code 
-that sent in the param.</td></tr><tr valign="top"><td>forkSetup</td><td>function</td><td>function() <br><br>This method loads the pubsubviewer widget which attaches to our 
-upper right corner triangle menu and generates 3 menu items like
-Pubsub Viewer, View Standalone, and Fork Widget. It also enables
-the modal dialog that shows the documentation for this widget.<br><br>By using chilipeppr.load() we can ensure that the pubsubviewer widget
-is only loaded and inlined once into the final ChiliPeppr workspace.
-We are given back a reference to the instantiated singleton so its
-not instantiated more than once. Then we call it's attachTo method
-which creates the full pulldown menu for us and attaches the click
-events.</td></tr>
+      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-widget-backuprestoretinyg"</td></tr><tr valign="top"><td>url</td><td>string</td><td>"https://raw.githubusercontent.com/chilipeppr/widget-backuprestoretinyg/master/auto-generated-widget.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"(Local dev. No edit URL)"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"https://github.com/chilipeppr/widget-backuprestoretinyg"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://localhost:9000/widget.html"</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Widget / Backup and Restore TinyG"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This widget does backup and restore of TinyG Configurations to/from PC file"</td></tr><tr valign="top"><td>publish</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>subscribe</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>foreignPublish</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>foreignSubscribe</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>isInitted</td><td>boolean</td><td></td></tr><tr valign="top"><td>readTinyG</td><td>boolean</td><td></td></tr><tr valign="top"><td>okToClose</td><td>boolean</td><td></td></tr><tr valign="top"><td>cjmDownloadRunning</td><td>boolean</td><td></td></tr><tr valign="top"><td>init</td><td>function</td><td>function () </td></tr><tr valign="top"><td>show</td><td>function</td><td>function () </td></tr><tr valign="top"><td>hide</td><td>function</td><td>function ()  //Executed on close</td></tr><tr valign="top"><td>btnSetup</td><td>function</td><td>function () </td></tr><tr valign="top"><td>closeDialog</td><td>function</td><td>function () </td></tr><tr valign="top"><td>saveTextAsFile</td><td>function</td><td>function () </td></tr><tr valign="top"><td>destroyClickedElement</td><td>function</td><td>function (event) </td></tr><tr valign="top"><td>loadFileAsText</td><td>function</td><td>function () </td></tr><tr valign="top"><td>downloadTinyGconfigs</td><td>function</td><td>function () </td></tr><tr valign="top"><td>sendDataElement</td><td>function</td><td>function (index) </td></tr><tr valign="top"><td>sendCommandGetResponse</td><td>function</td><td>function (cmd, timeout) </td></tr><tr valign="top"><td>cmdVerify</td><td>function</td><td>function (cmd, sendVal, recvVal, sendTime, recvTime, isVerified, respTime) </td></tr><tr valign="top"><td>dispArray</td><td>function</td><td>function () </td></tr><tr valign="top"><td>saveTextAsFile_Restore</td><td>function</td><td>function () </td></tr><tr valign="top"><td>uploadTinyGconfigs</td><td>function</td><td>function () </td></tr><tr valign="top"><td>onRecvCmdcjm</td><td>function</td><td>function (recvline) </td></tr><tr valign="top"><td>getAllParametersFromTinyG</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setDefaultValue</td><td>function</td><td>function () </td></tr><tr valign="top"><td>parseConfigParamFile</td><td>function</td><td>function () </td></tr><tr valign="top"><td>cjmsendConfig</td><td>function</td><td>function (cfg, timeout) </td></tr><tr valign="top"><td>processConfigReport</td><td>function</td><td>function (report, panel) </td></tr><tr valign="top"><td>forkSetup</td><td>function</td><td>function () </td></tr>
       </tbody>
   </table>
 
